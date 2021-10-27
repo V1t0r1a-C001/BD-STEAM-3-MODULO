@@ -1,0 +1,87 @@
+use steam;
+SELECT * FROM steam;
+SELECT * FROM steam_media_data;
+SELECT * FROM steam_requirements_data;
+SELECT * FROM steam_support_info;
+SELECT * FROM steamspy_tag_data;
+
+ALTER TABLE steam
+ADD PRIMARY KEY (appid);
+
+alter table steam_media_data
+add column id int auto_increment NOT NULL PRIMARY KEY first;
+
+alter table steam_description_data
+add column id int auto_increment NOT NULL PRIMARY KEY first;
+
+alter table steam_requirements_data
+add column id int auto_increment NOT NULL PRIMARY KEY first;
+
+alter table steam_support_info
+add column id int auto_increment NOT NULL PRIMARY KEY first;
+
+alter table steamspy_tag_data
+add column id int auto_increment NOT NULL PRIMARY KEY first;
+
+SELECT 
+    steam_description_data.steam_appid
+FROM
+    steam_description_data
+        LEFT JOIN
+    steam ON steam.appid = steam_description_data.steam_appid
+WHERE
+    steam.appid IS NULL;
+
+DELETE steam_description_data FROM steam_description_data
+        LEFT JOIN
+    steam ON steam.appid = steam_description_data.steam_appid 
+WHERE
+    steam.appid IS NULL;
+
+ALTER TABLE steam_description_data
+ADD FOREIGN KEY (steam_appid) REFERENCES steam(appid);
+
+SELECT 
+    steam_media_data.steam_appid
+FROM
+    steam_media_data
+        LEFT JOIN
+    steam ON steam.appid = steam_media_data.steam_appid
+WHERE
+    steam.appid IS NULL;
+
+DELETE steam_media_data FROM steam_media_data
+        LEFT JOIN
+    steam ON steam.appid = steam_media_data.steam_appid 
+WHERE
+    steam.appid IS NULL;
+
+ALTER TABLE steam_media_data
+ADD FOREIGN KEY (steam_appid) REFERENCES steam(appid);
+
+DELETE steam_requirements_data FROM steam_requirements_data
+        LEFT JOIN
+    steam ON steam.appid = steam_requirements_data.steam_appid 
+WHERE
+    steam.appid IS NULL;
+
+ALTER TABLE steam_requirements_data
+ADD FOREIGN KEY (steam_appid) REFERENCES steam(appid);
+
+DELETE steam_support_info FROM steam_support_info
+        LEFT JOIN
+    steam ON steam.appid = steam_support_info.steam_appid 
+WHERE
+    steam.appid IS NULL;
+
+ALTER TABLE steam_support_info
+ADD FOREIGN KEY (steam_appid) REFERENCES steam(appid);
+
+DELETE steam_support_info FROM steam_support_info
+        LEFT JOIN
+    steam ON steam.appid = steam_support_info.steam_appid 
+WHERE
+    steam.appid IS NULL;
+
+ALTER TABLE steam_support_info
+ADD FOREIGN KEY (steam_appid) REFERENCES steam(appid);
