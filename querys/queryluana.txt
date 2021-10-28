@@ -1,0 +1,24 @@
+use t8grupo4;
+select * from steam;
+-- Relação de valor gasto por idade 
+select name, average_playtime
+from steam 
+order by average_playtime desc 
+limit 10;
+
+
+select required_age from steam order by required_age desc;
+
+
+-- Relação de valor gasto por idade 
+select count(price),
+case 
+when required_age = 18 then "Jogos Recomendados para maiores de 18"
+when required_age = 16 then "Jogos Recomendados para idade de  16 anos"
+when required_age = 12 then "Jogos Recomendados para idade de 12 anos"
+when required_age = 7  then "Jogos Recomendados para idade de 7 anos"
+when required_age = 3  then "jogos Recomendados para idade de  3 anos"
+else "Jogos sem classificação etária definida"
+end as idade
+from steam 
+group by idade;
