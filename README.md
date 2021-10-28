@@ -2,7 +2,13 @@
 
  **_Neste projeto a equipe montou um dashboard com base no conjunto de dados STEAM, a fim de realizar uma apresentação com a exploração dos dados.
 Utilizando os conhecimentos com metodologias ágeis em organização de sprints,dividimos as funções e atividades para  estruturarmos o esquema do banco de dados e utilizar consultas com diversidade de operações._**
- 
+
+Ferramentas utilizadas:
+- [x] MySQL Workbench
+- [x] Metabase
+- [x] Trello
+
+
 ### Quantos jogos são adicionados à Steam por mês: 
 <hr>
 
