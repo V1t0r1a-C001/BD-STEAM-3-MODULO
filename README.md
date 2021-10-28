@@ -27,7 +27,7 @@ Desde o seu lançamento, até o ano de 2019(com base no conjunto de dados dispon
 
 ![g3](https://user-images.githubusercontent.com/56237420/139282871-a4d149b5-45b8-4ef8-9cf7-b9c66401bf16.png)
 
-### Gêneros de jogos que geram mais receita para a Steam: 
+### Gêneros de jogos mais caros: 
 <hr>
 
 ![g4](https://user-images.githubusercontent.com/56237420/139282887-6d54bc3a-8b4e-43cb-9f6e-b784f05b1ec2.png)
